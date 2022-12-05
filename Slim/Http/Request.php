@@ -6,7 +6,7 @@
  * @copyright   2011-2017 Josh Lockhart
  * @link        http://www.slimframework.com
  * @license     http://www.slimframework.com/license
- * @version     2.6.4
+ * @version     2.6.3
  * @package     Slim
  *
  * MIT LICENSE
@@ -84,7 +84,7 @@ class Request
     {
         $this->env = $env;
         $this->headers = new \Slim\Http\Headers(\Slim\Http\Headers::extract($env));
-        $this->cookies = new \Slim\Helper\Set(\Slim\Http\Util::parseCookieHeader($env['HTTP_COOKIE']));
+        $this->cookies = new \Slim\Helper\Set(\Slim\Http\Util::parseCookieHeader($env['HTTP_COOKIE'] ?: ''));
     }
 
     /**

@@ -6,7 +6,7 @@
  * @copyright   2011-2017 Josh Lockhart
  * @link        http://www.slimframework.com
  * @license     http://www.slimframework.com/license
- * @version     2.6.4
+ * @version     2.6.3
  * @package     Slim
  *
  * MIT LICENSE
@@ -57,7 +57,9 @@ class Util
      */
     public static function stripSlashesIfMagicQuotes($rawData, $overrideStripSlashes = null)
     {
-        $strip = is_null($overrideStripSlashes) ? get_magic_quotes_gpc() : $overrideStripSlashes;
+//        $strip = is_null($overrideStripSlashes) ? get_magic_quotes_gpc() : $overrideStripSlashes;
+        $strip = is_null($overrideStripSlashes) ? true : $overrideStripSlashes;
+
         if ($strip) {
             return self::stripSlashes($rawData);
         }
